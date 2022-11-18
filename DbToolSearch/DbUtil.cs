@@ -13,10 +13,8 @@ namespace DbToolSearch
     public class DbUtil
     {
         // 定義を宣言
-        //public MySqlConnection cn;
         public Boolean loginSta;
         public static string LoginErr;
-        //DbUtil lg;
 
         private static MySqlConnection Connection { get; set; }
 
@@ -24,22 +22,10 @@ namespace DbToolSearch
         public bool DataBasLogin()
         {
 
-            // MySQLへの接続情報
-            //string server = "localhost";
-            //string port = "3306";
-            //string database = "mysql";
-            //string user = "root";
-            //string pass = "root";
-            //string charset = "utf8";
 
             loginSta = true;
             //  接続のインスタンス
             Connection = new MySqlConnection();
-
-            //Connection.ConnectionString = string.Format("Server={0};Port={1};Database={2};Uid={3};Pwd={4};Charset={5}",
-            //                                        server, port, database, user, pass, charset);
-
-            //Console.WriteLine("");
 
             Connection.ConnectionString = System.IO.File.ReadAllText(@"C:\Data\ConnectionString.txt");
 
